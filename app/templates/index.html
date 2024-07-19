@@ -1,0 +1,63 @@
+{% load static %}
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+
+<body>
+    <!-- <section>
+        <div class="container">
+
+            <h1>Hello</h1>
+            <div> {% for grp in groups %}
+                  
+                  <div> 
+                    
+                    {{grp.name}} 
+
+                    <span>{% for teams in grp.teams %}  <div> {{teams.name}} </div>  <div> {{teams.code}} </div>  {% endfor %} </span>
+
+
+                  </div>
+                   
+                
+                  {% endfor %}
+                
+            </div>
+        </div>
+    </section> -->
+    <section style="margin-top: 15%;">
+        <h1 class=" container"> Euro2024 Matches</h1>
+        {% for round in rounds %}
+
+            <div class="container"> <h3> {{round.name}} </h3>  </div>
+            <!-- <div> {{round.matches}}  </div>  -->
+
+            <div>
+                {% for match in round.matches %}
+
+                <div class="container" style="background-color: rgb(66, 66, 199);">
+                    {{match.team1.name}} ({{match.team1.code}}) - {{match.team2.name}} ({{match.team2.code}}) : 
+                    
+                    <span class="container" style="background-color: rgb(219, 227, 240); color: blue;">
+                    {% if 'p' not in match.score %}
+
+                       {{match.score.ft}}
+                    {% else %}
+                    {{match.score.p}}
+                    {% endif %}
+                    </span>
+                </div>
+
+                {% endfor %}
+            </div>
+
+        {% endfor %}
+
+    </section>
+</body>
