@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+# from .models import UserScore
+
+# # Register your models here.
+
+
+# class UserScoreAdmin(admin.ModelAdmin):
+#     pass
+
+
+# admin.site.register(UserScore, UserScoreAdmin)
