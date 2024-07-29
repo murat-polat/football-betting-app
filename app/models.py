@@ -47,6 +47,8 @@ class Match(models.Model):
 class Betting(models.Model):
     id = models.IntegerField(primary_key=True)
     username = models.CharField(max_length=255)
+    team1 = models.CharField(max_length=255)
+    team2 = models.CharField(max_length=255)
     user_score1 = models.IntegerField(null=True, blank=True)
     user_score2 = models.IntegerField(null=True, blank=True)
 
