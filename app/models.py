@@ -30,18 +30,17 @@ class Team(models.Model):
     code = models.CharField(max_length=3)
     country = models.CharField(max_length=255)
 
-    def __str__(self):
+    def __repr__(self):
         return self.name, self.code, self.country
 
 class Match(models.Model):
     id = models.IntegerField(primary_key=True)
-    date = models.DateTimeField()
-    team1 = models.ForeignKey(Team, related_name='team1_matches', on_delete=models.CASCADE)
-    team2 = models.ForeignKey(Team, related_name='team2_matches', on_delete=models.CASCADE)
+    team1 = models.CharField(max_length=255)
+    team2 = models.CharField(max_length=255)
     score1 = models.IntegerField(null=True, blank=True)
     score2 = models.IntegerField(null=True, blank=True)
 
-    def __str__(self):
+    def __repr__(self):
         return self.team1, self.team2, self.score1, self.score2
 
 
@@ -51,5 +50,5 @@ class Betting(models.Model):
     user_score1 = models.IntegerField(null=True, blank=True)
     user_score2 = models.IntegerField(null=True, blank=True)
 
-    def __str__(self):
+    def __repr__(self):
         return self.user_score1, self.user_score2

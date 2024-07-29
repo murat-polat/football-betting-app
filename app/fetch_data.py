@@ -44,6 +44,6 @@ def fetch_match_data():
             else:
                 score1 = match['score']['p'][0]
                 score2 = match['score']['p'][1]
-                print(f"{round}, {id} {team1_name}, {team1_code} - {team2_name}, {team2_code} = {score1} / {score2}")
+            print(f"{round}, {id} {team1_name}, {team1_code} - {team2_name}, {team2_code} = {score1} / {score2}")
 
-    Match.objects.get_or_create(  team1=team1_name , team2=team2_name, score1=score1, score2=score2 )
+            Match.objects.get_or_create(  team1=team1_name , team2=team2_name, score1=score1, score2=score2 )

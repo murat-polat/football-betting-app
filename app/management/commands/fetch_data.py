@@ -7,10 +7,11 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         fetch_teams_data()
+        fetch_match_data()
         
         self.stdout.write(self.style.SUCCESS('Data fetched and saved successfully'))
-        def handle2(self, *args, **kwargs):
-            fetch_match_data()
-            
-            self.stdout.write(self.style.SUCCESS('Data fetched and saved successfully'))
+
+        
+        
+        
     
