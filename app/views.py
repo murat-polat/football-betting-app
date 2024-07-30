@@ -20,5 +20,5 @@ def index(request):
         rounds = { 'rounds' : rounds_}
         
                
-        return render(request, 'index.html',  rounds )
+        return render(request, 'app/index.html',  rounds )
 

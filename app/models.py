@@ -5,23 +5,6 @@ import json
 from importlib import resources
 import requests
 
-# class Rounds(models.Model):
-#         rounds_ = requests.get('https://raw.githubusercontent.com/openfootball/euro.json/master/2024/euro.json').json()['rounds']
-#         rounds = { 'rounds' : rounds_}
-#         models.JSONField(rounds)
-
-
-# class UserScore(models.Model):
-#     username = models.CharField(max_length=200)
-#     team1_score = models.IntegerField(default=0)
-#     team2_score = models.IntegerField(default=0)
-
-#     def __str__(self):
-#         return self.username, self.team1_score,self.team2_score
-    
-
-
-# models.py
 
 
 class Team(models.Model):
